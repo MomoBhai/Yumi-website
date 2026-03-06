@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yumi Café – Wuppertal</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --espresso: #2C1A0E;
+    --mocha: #5C3D2E;
+    --cappuccino: #A0714F;
+    --latte: #C9A882;
+    --cream: #F5ECD7;
+    --fog: #FAF6EE;
+    --white: #FFFDF8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--fog);
+    color: var(--espresso);
+    font-weight: 300;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(245,236,215,0.92);
+    backdrop-filter: blur(10px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    border-bottom: 1px solid rgba(160,113,79,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--mocha);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--cappuccino); font-style: italic; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mocha);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--cappuccino); }
+  .nav-cta {
+    background: var(--mocha);
+    color: var(--cream) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+  }
+  .nav-cta:hover { background: var(--cappuccino); color: var(--white) !important; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background:
+      linear-gradient(160deg, rgba(44,26,14,0.55) 0%, rgba(92,61,46,0.3) 100%),
+      url() center/cover no-repeat;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 0 8rem;
+  }
+  .hero-tag {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--latte);
+    margin-bottom: 1.2rem;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 6vw, 5.5rem);
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title em { color: var(--latte); }
+  .hero-sub {
+    color: rgba(245,236,215,0.8);
+    font-size: 1.05rem;
+    max-width: 440px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--cappuccino);
+    color: var(--white);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.3s;
+    border-radius: 2px;
+  }
+  .btn-primary:hover { background: var(--mocha); }
+  .btn-outline {
+    border: 1px solid rgba(245,236,215,0.6);
+    color: var(--cream);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all 0.3s;
+    border-radius: 2px;
+  }
+  .btn-outline:hover { background: rgba(245,236,215,0.1); }
+
+  .hours-badge {
+    margin-top: 3rem;
+    background: rgba(245,236,215,0.12);
+    border: 1px solid rgba(245,236,215,0.25);
+    border-radius: 4px;
+    padding: 1rem 1.8rem;
+    display: inline-flex; gap: 2.5rem;
+    backdrop-filter: blur(6px);
+  }
+  .hours-badge .day {
+    color: var(--latte);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .hours-badge .time {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 8rem; }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cappuccino);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--espresso);
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+  }
+  .section-title em { color: var(--cappuccino); font-style: italic; }
+  .divider {
+    width: 48px; height: 2px;
+    background: var(--latte);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  #highlights {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .highlight-text {
+    padding: 6rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .highlight-text p {
+    color: var(--mocha);
+    line-height: 1.85;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .highlight-img {
+    height: 560px;
+    background: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80') center/cover;
+  }
+
+  /* ── MENU ── */
+  #menu { background: var(--fog); }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .menu-category {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 4px;
+    border-top: 3px solid var(--latte);
+  }
+  .menu-category h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--mocha);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .menu-category h3 .icon { font-size: 1.2rem; }
+  .menu-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(160,113,79,0.2);
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .item-name { font-size: 0.95rem; color: var(--espresso); font-weight: 400; }
+  .item-desc { font-size: 0.78rem; color: var(--cappuccino); margin-top: 0.1rem; }
+  .item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--mocha);
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  /* ── GALLERY ── */
+  #galerie { background: var(--espresso); padding: 6rem 8rem; }
+  #galerie .section-label { color: var(--latte); }
+  #galerie .section-title { color: var(--cream); }
+  #galerie .divider { background: var(--cappuccino); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  /* ── ABOUT ── */
+  #ueber-uns {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .about-img {
+    height: 600px;
+    background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80') center/cover;
+  }
+  .about-text {
+    padding: 6rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .about-text p {
+    color: var(--mocha);
+    line-height: 1.9;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── CONTACT ── */
+  #kontakt { background: var(--white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 4rem;
+    margin-top: 1rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+  .contact-block h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--mocha);
+    margin-bottom: 0.5rem;
+  }
+  .contact-block p, .contact-block a {
+    color: var(--cappuccino);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-decoration: none;
+  }
+  .contact-block a:hover { color: var(--mocha); }
+  .call-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--mocha);
+    color: var(--cream) !important;
+    padding: 0.85rem 1.8rem;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+    width: fit-content;
+  }
+  .call-btn:hover { background: var(--cappuccino) !important; }
+  .map-placeholder {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--latte) 100%);
+    border-radius: 4px;
+    height: 360px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--mocha);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    gap: 0.5rem;
+    border: 2px dashed var(--latte);
+  }
+  .map-placeholder .map-icon { font-size: 2.5rem; }
+  .map-placeholder small {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    color: var(--cappuccino);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--espresso);
+    color: var(--latte);
+    padding: 3rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+  }
+  footer .footer-logo span { color: var(--latte); font-style: italic; }
+  footer p { font-size: 0.82rem; }
+  footer a { color: var(--latte); text-decoration: none; font-size: 0.82rem; }
+  footer a:hover { color: var(--cream); }
+  .footer-links { display: flex; gap: 1.5rem; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #home { padding: 0 2rem; }
+    .hours-badge { flex-direction: column; gap: 1rem; }
+    section { padding: 4rem 2rem; }
+    #highlights, #ueber-uns { grid-template-columns: 1fr; }
+    .highlight-text, .about-text { padding: 3rem 2rem; }
+    .highlight-img, .about-img { height: 300px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem; flex-direction: column; text-align: center; }
+    #galerie { padding: 4rem 2rem; }
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag, .hero-title, .hero-sub, .hero-buttons, .hours-badge {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-title { animation-delay: 0.1s; }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-buttons { animation-delay: 0.3s; }
+  .hours-badge { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yumi <span>Café</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menü</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-tag">Willkommen im Yumi Café</div>
+  <h1 class="hero-title">Wo jeder Schluck<br>ein <em>Moment</em> wird.</h1>
+  <p class="hero-sub">Handgefertigter Kaffee, hausgemachte Kuchen und eine Atmosphäre, die dich zum Verweilen einlädt.</p>
+  <div class="hero-buttons">
+    <a href="tel:+49XXXXXXXXX" class="btn-primary">☎ Reservieren</a>
+    <a href="https://instagram.com" target="_blank" class="btn-outline">Instagram →</a>
+  </div>
+  <div class="hours-badge">
+    <div>
+      <div class="day">Mo – Fr</div>
+      <div class="time">08:00 – 18:00</div>
+    </div>
+    <div>
+      <div class="day">Sa – So</div>
+      <div class="time">09:00 – 17:00</div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<div id="highlights">
+  <div class="highlight-text">
+    <div class="section-label">Unsere Philosophie</div>
+    <h2 class="section-title">Kaffee mit<br><em>Leidenschaft</em></h2>
+    <div class="divider"></div>
+    <p>Im Yumi Café glauben wir, dass ein guter Kaffee mehr ist als ein Getränk – er ist ein Ritual, ein Innehalten, ein kleines Glück im Alltag.</p>
+    <p>Wir verwenden handverlesene Bohnen, bereiten jeden Espresso mit Sorgfalt zu und servieren hausgemachte Kuchen, die nach Zuhause schmecken.</p>
+    <a href="#menu" class="btn-primary" style="width:fit-content; margin-top:1.5rem;">Zur Speisekarte</a>
+  </div>
+  <div class="highlight-img"></div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-label">Speisekarte</div>
+  <h2 class="section-title">Was wir <em>anbieten</em></h2>
+  <div class="divider"></div>
+  <div class="menu-grid">
+
+    <div class="menu-category">
+      <h3><span class="icon">☕</span> Getränke</h3>
+      <div class="menu-item">
+        <div><div class="item-name">Espresso</div></div>
+        <div class="item-price">2,20 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Cappuccino</div><div class="item-desc">mit Latte Art</div></div>
+        <div class="item-price">3,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Flat White</div></div>
+        <div class="item-price">3,80 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Matcha Latte</div><div class="item-desc">mit Hafermilch</div></div>
+        <div class="item-price">4,20 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Chai Latte</div></div>
+        <div class="item-price">3,90 €</div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3><span class="icon">🥐</span> Frühstück</h3>
+      <div class="menu-item">
+        <div><div class="item-name">Avocado Toast</div><div class="item-desc">auf Sauerteig, Sesam, Zitrone</div></div>
+        <div class="item-price">8,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Yumi Frühstück</div><div class="item-desc">Brot, Aufschnitt, Ei, Kaffee</div></div>
+        <div class="item-price">11,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Granola Bowl</div><div class="item-desc">mit Joghurt & Beeren</div></div>
+        <div class="item-price">6,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Croissant</div><div class="item-desc">frisch gebacken</div></div>
+        <div class="item-price">2,80 €</div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3><span class="icon">🍰</span> Kuchen & Gebäck</h3>
+      <div class="menu-item">
+        <div><div class="item-name">Cheesecake</div><div class="item-desc">New York Style</div></div>
+        <div class="item-price">4,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Tiramisu</div><div class="item-desc">hausgemacht</div></div>
+        <div class="item-price">4,80 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Brownie</div><div class="item-desc">Schokolade & Walnuss</div></div>
+        <div class="item-price">3,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Tagesgebäck</div><div class="item-desc">wechselnd</div></div>
+        <div class="item-price">ab 2,50 €</div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3><span class="icon">🥗</span> Snacks</h3>
+      <div class="menu-item">
+        <div><div class="item-name">Club Sandwich</div><div class="item-desc">Huhn, Tomate, Salat</div></div>
+        <div class="item-price">7,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Bagel</div><div class="item-desc">Frischkäse & Lachs</div></div>
+        <div class="item-price">6,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div><div class="item-name">Soup of the Day</div><div class="item-desc">mit Brot</div></div>
+        <div class="item-price">5,90 €</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galerie">
+  <div class="section-label">Galerie</div>
+  <h2 class="section-title" style="color:var(--cream)">Atmosphäre & <em style="color:var(--latte)">Details</em></h2>
+  <div class="divider"></div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80" alt="Café Interieur">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=600&q=80" alt="Latte Art">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Kaffee">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&q=80" alt="Kuchen">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80" alt="Food">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div id="ueber-uns">
+  <div class="about-img"></div>
+  <div class="about-text">
+    <div class="section-label">Über uns</div>
+    <h2 class="section-title">Unsere <em>Geschichte</em></h2>
+    <div class="divider"></div>
+    <p>TEXT TEXT TEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXTTEXT </p
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="kontakt">
+  <div class="section-label">Kontakt</div>
+  <h2 class="section-title">Besucht <em>uns</em></h2>
+  <div class="divider"></div>
+  <div class="contact-grid">
+    <div class="contact-info">
+
+      <div class="contact-block">
+        <h4>Adresse</h4>
+        <p>Friedrich-Ebert-Straße 30, Wuppertal, Germany 42103</p>
+      </div>
+
+      <div class="contact-block">
+        <h4>Öffnungszeiten</h4>
+        <p>Montag – Freitag: 09:00 – 19:00 Uhr<br>Samstag – Sonntag: 09:00 – 19:00 Uhr</p>
+      </div>
+
+      <div class="contact-block">
+        <h4>Reservierungen</h4>
+        <p>Telefonisch oder via Instagram</p>
+        <a href="tel:+49XXXXXXXXX" class="call-btn">☎ Jetzt anrufen</a>
+      </div>
+
+      <div class="contact-block">
+        <h4>Instagram</h4>
+        <a href="https://www.instagram.com/yumi.cafee/?hl=en target="_blank">@yumi.cafe →</a>
+      </div>
+
+    </div>
+
+    <div class="map-placeholder">
+      <div class="map-icon">📍</div>
+      Google Maps
+      <small>wird hier eingebettet</small>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yumi <span>Café</span></div>
+  <p>© 2026 Yumi Café · Duisburg</p>
+  <div class="footer-links">
+    <a href="#">Datenschutz</a>
+    <a href="#">Impressum</a>
+    <a href="https://www.instagram.com/yumi.cafee/?hl=en" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
