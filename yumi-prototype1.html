@@ -20,7 +20,6 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Jost', sans-serif; background: var(--fog); color: var(--espresso); font-weight: 300; }
 
-  /* ── NAV ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
     background: rgba(245,236,215,0.95);
@@ -29,96 +28,32 @@
     padding: 1rem 4rem;
     border-bottom: 1px solid rgba(111,78,55,0.2);
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .nav-logo-beans {
-    display: flex; gap: 3px;
-  }
-  .bean {
-    width: 14px; height: 20px;
-    background: var(--mocha);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    position: relative;
-    transform: rotate(-15deg);
-  }
-  .bean::after {
-    content: '';
-    position: absolute;
-    top: 20%; left: 50%;
-    transform: translateX(-50%);
-    width: 2px; height: 60%;
-    background: rgba(245,236,215,0.6);
-    border-radius: 2px;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.8rem; }
+  .nav-logo-beans { display: flex; gap: 3px; }
+  .bean { width: 14px; height: 20px; background: var(--mocha); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; position: relative; transform: rotate(-15deg); }
+  .bean::after { content: ''; position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 2px; height: 60%; background: rgba(245,236,215,0.6); border-radius: 2px; }
   .bean:last-child { transform: rotate(15deg); }
   .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .nav-logo-text .logo-name {
-    font-family: 'Jost', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    color: var(--mocha);
-  }
-  .nav-logo-text .logo-tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.65rem;
-    font-style: italic;
-    color: var(--cappuccino);
-    letter-spacing: 0.05em;
-  }
+  .nav-logo-text .logo-name { font-family: 'Jost', sans-serif; font-size: 1.4rem; font-weight: 500; letter-spacing: 0.25em; color: var(--mocha); }
+  .nav-logo-text .logo-tagline { font-family: 'Playfair Display', serif; font-size: 0.65rem; font-style: italic; color: var(--cappuccino); letter-spacing: 0.05em; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--mocha); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: color 0.3s; }
   .nav-links a:hover { color: var(--cappuccino); }
   .nav-cta { background: var(--mocha); color: var(--cream) !important; padding: 0.6rem 1.4rem; border-radius: 2px; }
   .nav-cta:hover { background: var(--cappuccino) !important; }
 
-  /* ── HERO ── */
   #home {
     min-height: 100vh;
-    background:
-      linear-gradient(160deg, rgba(44,26,14,0.65) 0%, rgba(111,78,55,0.35) 100%),
-      url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80') center/cover no-repeat;
+    background: linear-gradient(160deg, rgba(44,26,14,0.65) 0%, rgba(111,78,55,0.35) 100%), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1600&q=80') center/cover no-repeat;
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
     padding: 0 8rem;
   }
-  .hero-beans {
-    display: flex; gap: 5px; margin-bottom: 1.5rem;
-  }
-  .hero-bean {
-    width: 22px; height: 32px;
-    background: rgba(201,168,130,0.7);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    position: relative;
-    transform: rotate(-15deg);
-  }
-  .hero-bean::after {
-    content: '';
-    position: absolute;
-    top: 20%; left: 50%;
-    transform: translateX(-50%);
-    width: 2px; height: 60%;
-    background: rgba(245,236,215,0.4);
-    border-radius: 2px;
-  }
+  .hero-beans { display: flex; gap: 5px; margin-bottom: 1.5rem; }
+  .hero-bean { width: 22px; height: 32px; background: rgba(201,168,130,0.7); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; position: relative; transform: rotate(-15deg); }
+  .hero-bean::after { content: ''; position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 2px; height: 60%; background: rgba(245,236,215,0.4); border-radius: 2px; }
   .hero-bean:last-child { transform: rotate(15deg); }
-  .hero-name {
-    font-family: 'Jost', sans-serif;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-  .hero-tagline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    font-style: italic;
-    color: var(--latte);
-    margin-bottom: 2rem;
-    letter-spacing: 0.05em;
-  }
+  .hero-name { font-family: 'Jost', sans-serif; font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 500; letter-spacing: 0.3em; color: var(--white); line-height: 1; margin-bottom: 0.3rem; }
+  .hero-tagline { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.4rem); font-style: italic; color: var(--latte); margin-bottom: 2rem; letter-spacing: 0.05em; }
   .hero-sub { color: rgba(245,236,215,0.75); font-size: 1rem; max-width: 420px; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
   .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary { background: var(--mocha); color: var(--white); padding: 0.9rem 2.2rem; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; transition: background 0.3s; border-radius: 2px; }
@@ -129,20 +64,17 @@
   .hours-badge .day { color: var(--latte); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.2rem; }
   .hours-badge .time { color: var(--white); font-size: 0.95rem; font-weight: 400; }
 
-  /* ── SECTION BASE ── */
   section { padding: 6rem 8rem; }
   .section-label { font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cappuccino); margin-bottom: 0.8rem; }
   .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--espresso); margin-bottom: 1.2rem; line-height: 1.2; }
   .section-title em { color: var(--mocha); font-style: italic; }
   .divider { width: 48px; height: 2px; background: var(--latte); margin-bottom: 2.5rem; }
 
-  /* ── HIGHLIGHTS ── */
   #highlights { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
   .highlight-text { padding: 6rem; display: flex; flex-direction: column; justify-content: center; }
   .highlight-text p { color: var(--mocha); line-height: 1.85; font-size: 1rem; margin-bottom: 1rem; }
   .highlight-img { height: 560px; background: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80') center/cover; }
 
-  /* ── MENU ── */
   #menu { background: var(--fog); }
   .menu-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
   .tab-btn { background: none; border: 1px solid var(--latte); color: var(--mocha); padding: 0.5rem 1.2rem; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all 0.25s; font-weight: 400; }
@@ -151,6 +83,7 @@
   .menu-panel.active { display: block; }
   .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
   .menu-grid.single { grid-template-columns: 1fr; max-width: 680px; }
+  .menu-grid.triple { grid-template-columns: repeat(3, 1fr); }
   .menu-category { background: var(--white); padding: 2.5rem; border-radius: 4px; border-top: 3px solid var(--mocha); }
   .menu-category h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--mocha); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
   .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 0.6rem 0; border-bottom: 1px dashed rgba(111,78,55,0.2); }
@@ -158,8 +91,8 @@
   .item-name { font-size: 0.95rem; color: var(--espresso); font-weight: 400; }
   .item-desc { font-size: 0.78rem; color: var(--cappuccino); margin-top: 0.1rem; }
   .item-price { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--mocha); white-space: nowrap; margin-left: 1rem; }
+  .menu-note { font-size: 0.78rem; color: var(--cappuccino); font-style: italic; margin-bottom: 1rem; }
 
-  /* ── GALLERY ── */
   #galerie { background: var(--espresso); padding: 6rem 8rem; }
   #galerie .section-label { color: var(--latte); }
   #galerie .section-title { color: var(--cream); }
@@ -170,13 +103,11 @@
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
   .gallery-item:hover img { transform: scale(1.04); }
 
-  /* ── ABOUT ── */
   #ueber-uns { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
   .about-img { height: 600px; background: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&q=80') center/cover; }
   .about-text { padding: 6rem; display: flex; flex-direction: column; justify-content: center; }
   .about-text p { color: var(--mocha); line-height: 1.9; font-size: 1rem; margin-bottom: 1.2rem; }
 
-  /* ── CONTACT ── */
   #kontakt { background: var(--white); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; margin-top: 1rem; }
   .contact-info { display: flex; flex-direction: column; gap: 2rem; }
@@ -185,11 +116,7 @@
   .contact-block a:hover { color: var(--mocha); }
   .call-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--mocha); color: var(--cream) !important; padding: 0.85rem 1.8rem; border-radius: 2px; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem; transition: background 0.3s; width: fit-content; }
   .call-btn:hover { background: var(--cappuccino) !important; }
-  .map-placeholder { background: linear-gradient(135deg, var(--cream) 0%, var(--latte) 100%); border-radius: 4px; height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--mocha); font-family: 'Playfair Display', serif; font-size: 1.1rem; gap: 0.5rem; border: 2px dashed var(--latte); }
-  .map-placeholder .map-icon { font-size: 2.5rem; }
-  .map-placeholder small { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: var(--cappuccino); letter-spacing: 0.1em; text-transform: uppercase; }
 
-  /* ── FOOTER ── */
   footer { background: var(--espresso); color: var(--latte); padding: 3rem 8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { display: flex; align-items: center; gap: 0.6rem; }
   .footer-beans { display: flex; gap: 2px; }
@@ -203,7 +130,6 @@
   footer a:hover { color: var(--cream); }
   .footer-links { display: flex; gap: 1.5rem; }
 
-  /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -213,7 +139,7 @@
     #highlights, #ueber-uns { grid-template-columns: 1fr; }
     .highlight-text, .about-text { padding: 3rem 2rem; }
     .highlight-img, .about-img { height: 300px; }
-    .menu-grid { grid-template-columns: 1fr; }
+    .menu-grid, .menu-grid.triple { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
     .gallery-item:first-child { grid-column: span 2; grid-row: span 1; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -232,13 +158,9 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-beans">
-      <div class="bean"></div>
-      <div class="bean"></div>
-    </div>
+    <div class="nav-logo-beans"><div class="bean"></div><div class="bean"></div></div>
     <div class="nav-logo-text">
       <span class="logo-name">YUMI</span>
       <span class="logo-tagline">more than coffee...</span>
@@ -253,12 +175,8 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="home">
-  <div class="hero-beans">
-    <div class="hero-bean"></div>
-    <div class="hero-bean"></div>
-  </div>
+  <div class="hero-beans"><div class="hero-bean"></div><div class="hero-bean"></div></div>
   <div class="hero-name">YUMI</div>
   <div class="hero-tagline">more than coffee...</div>
   <p class="hero-sub">Handgefertigter Kaffee, hausgemachte Kuchen und eine Atmosphäre, die dich zum Verweilen einlädt.</p>
@@ -267,14 +185,10 @@
     <a href="https://www.instagram.com/yumi.cafee/" target="_blank" class="btn-outline">Instagram →</a>
   </div>
   <div class="hours-badge">
-    <div>
-      <div class="day">Mo – So</div>
-      <div class="time">09:00 – 21:00</div>
-    </div>
+    <div><div class="day">Mo – So</div><div class="time">09:00 – 21:00</div></div>
   </div>
 </section>
 
-<!-- HIGHLIGHTS -->
 <div id="highlights">
   <div class="highlight-text">
     <div class="section-label">Unsere Philosophie</div>
@@ -287,185 +201,243 @@
   <div class="highlight-img"></div>
 </div>
 
-<!-- MENU -->
 <section id="menu">
   <div class="section-label">Speisekarte</div>
   <h2 class="section-title">Was wir <em>anbieten</em></h2>
   <div class="divider"></div>
 
   <div class="menu-tabs">
-    <button class="tab-btn active" onclick="showTab('brote')">Brote</button>
-    <button class="tab-btn" onclick="showTab('bowls')">Bowls & Eier</button>
-    <button class="tab-btn" onclick="showTab('snacks')">Snacks & Salate</button>
-    <button class="tab-btn" onclick="showTab('pinsa')">Pinsa & Waffeln</button>
-    <button class="tab-btn" onclick="showTab('heiss')">Heißgetränke</button>
-    <button class="tab-btn" onclick="showTab('kalt')">Kaltgetränke</button>
-    <button class="tab-btn" onclick="showTab('soft')">Softgetränke</button>
+    <button class="tab-btn active" onclick="showTab('brote', this)">Brote & Eier</button>
+    <button class="tab-btn" onclick="showTab('suesses', this)">Süßes</button>
+    <button class="tab-btn" onclick="showTab('salate', this)">Salate & Snacks</button>
+    <button class="tab-btn" onclick="showTab('pinsa', this)">Pinsa & Signature</button>
+    <button class="tab-btn" onclick="showTab('coffee', this)">Coffee</button>
+    <button class="tab-btn" onclick="showTab('matcha', this)">Matcha & Tee</button>
+    <button class="tab-btn" onclick="showTab('drinks', this)">Drinks</button>
+    <button class="tab-btn" onclick="showTab('aperitif', this)">Weine & Aperitif</button>
   </div>
 
-  <!-- BROTE -->
+  <!-- BROTE & EIER -->
   <div id="tab-brote" class="menu-panel active">
     <div class="menu-grid">
       <div class="menu-category">
         <h3>🍞 Brote</h3>
-        <div class="menu-item"><div><div class="item-name">Der Klassiker</div><div class="item-desc">Hausgemachte Remoulade, Wildkräutersalat, 2 gekochte Eier</div></div><div class="item-price">8,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Strammer Max mit Käse</div><div class="item-desc">Hausgemachte Remoulade, Käse, 2 Spiegeleier</div></div><div class="item-price">8,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Strammer Max Deluxe</div><div class="item-desc">Hausgemachte Remoulade, Geflügelschinken, 2 Spiegeleier</div></div><div class="item-price">9,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Champignons mit Avocadocreme</div><div class="item-desc">Avocadocreme, Wildkräutersalat, gebratene Champignons</div></div><div class="item-price">9,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Egg Benedict mit Avocadocreme</div><div class="item-desc">Avocadocreme, Wildkräutersalat, 2 pochierte Eier, Sauce Hollandaise</div></div><div class="item-price">10,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Hummus Traum</div><div class="item-desc">Hausgemachter Hummus, geschmorte Tomaten, Walnüsse und geröstete Kichererbsen</div></div><div class="item-price">10,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Der Klassiker</div><div class="item-desc">Hausgemachte Remoulade, Salat, 2 gekochte Eier</div></div><div class="item-price">8,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Strammer Max – Käse</div><div class="item-desc">Hausgemachte Remoulade, Käse, 2 Spiegeleier</div></div><div class="item-price">8,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Strammer Max – Deluxe</div><div class="item-desc">Hausgemachte Remoulade, Geflügelschinken, 2 Spiegeleier</div></div><div class="item-price">9,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Champignons mit Avocadocreme</div><div class="item-desc">Avocadocreme, Salat, gebratene Champignons</div></div><div class="item-price">9,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Egg Benedict mit Avocadocreme</div><div class="item-desc">Avocadocreme, Salat, 2 pochierte Eier, Sauce Hollandaise</div></div><div class="item-price">10,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Hummus Traum</div><div class="item-desc">Hausgemachter Hummus, geschmorte Tomaten, Walnüsse, geröstete Kichererbsen</div></div><div class="item-price">10,90 €</div></div>
         <div class="menu-item"><div><div class="item-name">Pesto trifft Burrata</div><div class="item-desc">Pesto, Burrata, Rucola, Balsamico, gehobelter Hartkäse</div></div><div class="item-price">12,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Sucuk auf Schafskäsemus</div><div class="item-desc">Hausgemachter Schafskäsemus, Wildkräutersalat, Sucuk, 2 pochierte Eier</div></div><div class="item-price">12,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Sucuk auf Schafskäsemus</div><div class="item-desc">Hausgemachter Schafskäsemus, Salat, Sucuk, 2 pochierte Eier</div></div><div class="item-price">12,90 €</div></div>
       </div>
       <div class="menu-category">
-        <h3>🥐 Belgische Waffeln & Croissants</h3>
-        <div class="menu-item"><div><div class="item-name">Croissant natur</div></div><div class="item-price">1,80 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Croissant süß</div></div><div class="item-price">2,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Croissant herzhaft nach Wahl belegt</div></div><div class="item-price">3,20 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Belgische Waffel natur</div></div><div class="item-price">4,80 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Belgische Waffel süß</div></div><div class="item-price">6,90 €</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BOWLS & EIER -->
-  <div id="tab-bowls" class="menu-panel">
-    <div class="menu-grid">
-      <div class="menu-category">
-        <h3>🥣 Bowls</h3>
-        <div class="menu-item"><div><div class="item-name">Joghurt Bowl nach griech. Art</div></div><div class="item-price">4,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Joghurt Bowl Berry</div></div><div class="item-price">8,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Smoothie Bowl Schoko</div></div><div class="item-price">10,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Smoothie Bowl Berry</div></div><div class="item-price">11,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Matcha Bowl</div></div><div class="item-price">11,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Acai Bowl</div></div><div class="item-price">11,90 €</div></div>
-      </div>
-      <div class="menu-category">
-        <h3>🍳 Eier</h3>
-        <div class="menu-item"><div><div class="item-name">Spiegeleier</div><div class="item-desc">2 Bio Eier mit Brot</div></div><div class="item-price">4,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Rührei</div><div class="item-desc">3 Bio Eier mit Brot</div></div><div class="item-price">6,50 €</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SNACKS & SALATE -->
-  <div id="tab-snacks" class="menu-panel">
-    <div class="menu-grid">
-      <div class="menu-category">
-        <h3>🥪 Toasts & Snacks</h3>
+        <h3>🍳 Eier & Toasts</h3>
+        <p class="menu-note">Eier werden mit Dinkelbrot serviert</p>
+        <div class="menu-item"><div><div class="item-name">Spiegeleier</div><div class="item-desc">2 Bio Eier</div></div><div class="item-price">4,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Rührei</div><div class="item-desc">3 Bio Eier</div></div><div class="item-price">6,50 €</div></div>
+        <p class="menu-note" style="margin-top:1.2rem;">Toasts werden mit Butter und Gouda zubereitet</p>
         <div class="menu-item"><div><div class="item-name">Toast Klassisch</div></div><div class="item-price">5,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Toast Schinken</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Toast Geflügelschinken</div></div><div class="item-price">6,90 €</div></div>
         <div class="menu-item"><div><div class="item-name">Toast Sucuk</div></div><div class="item-price">7,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Toast Pastrami</div></div><div class="item-price">8,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Hausbrot Pita</div><div class="item-desc">mit einem Dip nach Wahl (Honig-Senf, Smoked Chilli, hausgemachter Hummus, Avocadocreme)</div></div><div class="item-price">4,00 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Pita to share</div><div class="item-desc">Hausbrot Pita, Schafskäsemus, Hummus, Avocadocreme, Kalamata Oliven + weitere Dips</div></div><div class="item-price">11,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Nachos</div><div class="item-desc">mit einem Dip nach Wahl + weitere Dips</div></div><div class="item-price">4,20 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Yumi's Pastrami Sandwich</div></div><div class="item-price">13,50 €</div></div>
       </div>
+    </div>
+  </div>
+
+  <!-- SÜSSES -->
+  <div id="tab-suesses" class="menu-panel">
+    <div class="menu-grid triple">
+      <div class="menu-category">
+        <h3>🥐 Croissant</h3>
+        <div class="menu-item"><div><div class="item-name">Natur</div></div><div class="item-price">2,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Geflügelschinken</div></div><div class="item-price">3,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Sucuk</div></div><div class="item-price">5,10 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Räucherlachs</div></div><div class="item-price">5,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Käse</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Marmelade</div></div><div class="item-price">2,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Honig</div></div><div class="item-price">2,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Nutella</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lotuscreme</div></div><div class="item-price">4,10 €</div></div>
+      </div>
+      <div class="menu-category">
+        <h3>🧇 Belgische Waffel</h3>
+        <div class="menu-item"><div><div class="item-name">Natur</div></div><div class="item-price">4,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Saure Kirschen</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Marmelade</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Nutella</div></div><div class="item-price">7,20 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lotuscreme</div></div><div class="item-price">7,50 €</div></div>
+        <h3 style="margin-top:1.5rem;">🥞 Pancake</h3>
+        <div class="menu-item"><div><div class="item-name">Natur</div></div><div class="item-price">4,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Nutella</div></div><div class="item-price">5,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lotuscreme</div></div><div class="item-price">5,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Blaubeeren</div></div><div class="item-price">5,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">American (mit Bacon)</div></div><div class="item-price">8,00 €</div></div>
+      </div>
+      <div class="menu-category">
+        <h3>🥐 Croffle</h3>
+        <div class="menu-item"><div><div class="item-name">Natur</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Marmelade</div></div><div class="item-price">3,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Nutella</div></div><div class="item-price">4,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lotuscreme</div></div><div class="item-price">4,90 €</div></div>
+        <h3 style="margin-top:1.5rem;">🍞 French Toast</h3>
+        <div class="menu-item"><div><div class="item-name">Peach Cobbler</div><div class="item-desc">French Toast, Pfirsiche, Walnüsse</div></div><div class="item-price">12,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lotus Träumchen</div><div class="item-desc">French Toast, Lotuscreme Crumble</div></div><div class="item-price">11,50 €</div></div>
+        <h3 style="margin-top:1.5rem;">🍰 Desserts</h3>
+        <div class="menu-item"><div><div class="item-name">Schaut in unsere Kuchenvitrine</div><div class="item-desc">oder fragt nach :)</div></div><div class="item-price">–</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SALATE & SNACKS -->
+  <div id="tab-salate" class="menu-panel">
+    <div class="menu-grid">
       <div class="menu-category">
         <h3>🥗 Salate</h3>
         <div class="menu-item"><div><div class="item-name">Basic</div><div class="item-desc">Gemischter Salat, Cherrytomaten</div></div><div class="item-price">4,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Yumi Salat</div><div class="item-desc">Wildkräutersalat, rote Zwiebeln, Cherrytomaten, Schafskäse, Walnüsse</div></div><div class="item-price">9,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Burrata Salat</div><div class="item-desc">Cherrytomate, Burrata, rote Zwiebeln, Basilikum</div></div><div class="item-price">10,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Yumi Salat</div><div class="item-desc">Wildkräutersalat, rote Zwiebeln, Cherrytomaten, Schafskäse, Walnüsse, Granatapfelkerne</div></div><div class="item-price">9,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Burrata Salat</div><div class="item-desc">Cherrytomaten, Burrata, rote Zwiebeln</div></div><div class="item-price">10,90 €</div></div>
       </div>
-    </div>
-  </div>
-
-  <!-- PINSA -->
-  <div id="tab-pinsa" class="menu-panel">
-    <div class="menu-grid single">
       <div class="menu-category">
-        <h3>🍕 Pinsa</h3>
-        <div class="menu-item"><div><div class="item-name">Pinsa Mediterrana</div><div class="item-desc">Paprika, Aubergine, getr. Tomaten, Rucola und Trüffelcreme</div></div><div class="item-price">14,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Pinsa Sucuk</div><div class="item-desc">Tomatensauce, Schafskäse, Sucuk</div></div><div class="item-price">14,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Pinsa Italia</div><div class="item-desc">Tomatensauce, getr. Tomaten, Burrata, Rucola, Hartkäse</div></div><div class="item-price">15,90 €</div></div>
+        <h3>🥙 Snacks</h3>
+        <div class="menu-item"><div><div class="item-name">Hausbrot Pita</div><div class="item-desc">mit einem Dip nach Wahl</div></div><div class="item-price">4,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Pita to share</div><div class="item-desc">Hausbrot Pita, Schafskäsemus, Hummus, Avocadocreme, Kalamata & Mammouth Oliven</div></div><div class="item-price">11,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Nachos</div><div class="item-desc">mit einem Dip nach Wahl</div></div><div class="item-price">4,20 €</div></div>
+        <h3 style="margin-top:1.5rem;">🥣 Bowls</h3>
+        <div class="menu-item"><div><div class="item-name">Hellas Bowl</div><div class="item-desc">Griech. Joghurt, Walnüsse, Honig</div></div><div class="item-price">4,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Hellas Bowl Berry</div><div class="item-desc">Griech. Joghurt, Beerenmix, Banane, hausgemachtes Granola</div></div><div class="item-price">8,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Smoothie Bowl Schoko</div><div class="item-desc">Banane, Kokosmilch, Kakao, Datteln, Mandelmus</div></div><div class="item-price">10,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Smoothie Bowl Berry</div><div class="item-desc">Banane, Himbeeren, Kokosmilch, Datteln, Mandelmus</div></div><div class="item-price">11,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Acai Bowl</div><div class="item-desc">Heidelbeeren, Banane, Kokosmilch, Acai Püree</div></div><div class="item-price">11,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Matcha Bowl</div><div class="item-desc">Banane, Mango, Spinat, Kokosmilch, Matcha</div></div><div class="item-price">11,90 €</div></div>
       </div>
     </div>
   </div>
 
-  <!-- HEIßGETRÄNKE -->
-  <div id="tab-heiss" class="menu-panel">
+  <!-- PINSA & SIGNATURE -->
+  <div id="tab-pinsa" class="menu-panel">
     <div class="menu-grid">
       <div class="menu-category">
-        <h3>☕ Kaffee</h3>
-        <div class="menu-item"><div><div class="item-name">Espresso</div></div><div class="item-price">2,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Espresso Doppio</div></div><div class="item-price">3,80 €</div></div>
+        <h3>🍕 Pinsa</h3>
+        <div class="menu-item"><div><div class="item-name">Mediterrana</div><div class="item-desc">Mediterranes Grillgemüse, Paprika, Aubergine, getr. Tomaten, Trüffelcreme</div></div><div class="item-price">14,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Sucuk</div><div class="item-desc">Tomatensauce, Schafskäse, Sucuk</div></div><div class="item-price">14,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Italia</div><div class="item-desc">Tomatensauce, getr. Tomaten, Burrata, Rucola, Hartkäse</div></div><div class="item-price">15,90 €</div></div>
+      </div>
+      <div class="menu-category">
+        <h3>⭐ Signature</h3>
+        <div class="menu-item"><div><div class="item-name">Yumi's Pastrami Sandwich</div><div class="item-desc">Pastrami, Briochebrot, Honig-Senf Sauce, Nachos, saure Gurke, Chili Cheese Dip</div></div><div class="item-price">13,50 €</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COFFEE -->
+  <div id="tab-coffee" class="menu-panel">
+    <div class="menu-grid">
+      <div class="menu-category">
+        <h3>☕ Hot Coffee</h3>
+        <div class="menu-item"><div><div class="item-name">Espresso / Doppio</div></div><div class="item-price">2,50 / 3,80 €</div></div>
         <div class="menu-item"><div><div class="item-name">Espresso Macchiato</div></div><div class="item-price">2,80 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Cortado</div></div><div class="item-price">3,20 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Cortado [stark]</div></div><div class="item-price">3,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Cappuccino</div></div><div class="item-price">3,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Cortado / Stark</div></div><div class="item-price">3,20 / 3,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Cappuccino</div></div><div class="item-price">3,80 / 4,80 €</div></div>
         <div class="menu-item"><div><div class="item-name">Flat White</div></div><div class="item-price">4,20 €</div></div>
         <div class="menu-item"><div><div class="item-name">Latte Macchiato</div></div><div class="item-price">4,10 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Latte Macchiato mit Flavour</div><div class="item-desc">Caramel, Haselnuss, Vanille, Pumpkin Spice</div></div><div class="item-price">4,50 €</div></div>
         <div class="menu-item"><div><div class="item-name">Milchkaffee</div></div><div class="item-price">4,10 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Americano</div></div><div class="item-price">3,30 – 4,30 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Caffè Crema</div></div><div class="item-price">3,40 – 4,40 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Americano</div></div><div class="item-price">3,30 / 4,30 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Caffè Crema</div></div><div class="item-price">3,40 / 4,40 €</div></div>
         <div class="menu-item"><div><div class="item-name">Filterkaffee</div></div><div class="item-price">4,10 €</div></div>
         <div class="menu-item"><div><div class="item-name">Türkischer Mocca</div></div><div class="item-price">4,00 €</div></div>
         <div class="menu-item"><div><div class="item-name">Heiße Schokolade</div><div class="item-desc">dunkel oder weiß</div></div><div class="item-price">4,30 €</div></div>
       </div>
       <div class="menu-category">
-        <h3>🍵 Spezialitäten & Tee</h3>
-        <div class="menu-item"><div><div class="item-name">Chai Latte Tiger Spice</div></div><div class="item-price">4,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Chai Latte Elephant Vanilla</div></div><div class="item-price">4,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">White Chocolate Latte</div></div><div class="item-price">4,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Schwarzer Tee</div><div class="item-desc">Earl Grey</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Kräuter-Früchtetee</div><div class="item-desc">Pomolo</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Grüne-Kräutermischung</div><div class="item-desc">Marani</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Früchtetee</div><div class="item-desc">Heiss & Innig</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Rooibos-Fruchtemischung</div><div class="item-desc">Rooibos-Kirsche-Cranberry</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Extra: Hafermilch / Mandelmilch / laktosefrei</div></div><div class="item-price">0,30 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Extra: Sahne</div></div><div class="item-price">0,50 €</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- KALTGETRÄNKE -->
-  <div id="tab-kalt" class="menu-panel">
-    <div class="menu-grid single">
-      <div class="menu-category">
-        <h3>🧊 Kaltgetränke</h3>
+        <h3>🧊 Iced Coffee</h3>
         <div class="menu-item"><div><div class="item-name">Iced Americano</div></div><div class="item-price">4,60 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Shakerato</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Freddo Espresso</div></div><div class="item-price">3,50 €</div></div>
         <div class="menu-item"><div><div class="item-name">Iced Latte</div></div><div class="item-price">4,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Iced Latte mit Flavour</div><div class="item-desc">Caramel, Haselnuss, Vanille, Pumpkin Spice</div></div><div class="item-price">4,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Iced Matcha Latte</div></div><div class="item-price">5,20 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Fredo Cappuccino</div></div><div class="item-price">4,20 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Freddo Cappuccino</div></div><div class="item-price">4,90 €</div></div>
         <div class="menu-item"><div><div class="item-name">Affogato</div></div><div class="item-price">3,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Shakerato</div></div><div class="item-price">3,80 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Espresso Tonic</div></div><div class="item-price">4,90 €</div></div>
+        <h3 style="margin-top:1.5rem;">➕ Extras</h3>
+        <div class="menu-item"><div><div class="item-name">Milchalternative (Laktosefrei / Hafer / Mandel / Kokos)</div></div><div class="item-price">0,30 – 0,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Flavour (Vanille / Caramel / Haselnuss / Pumpkinspice)</div></div><div class="item-price">0,40 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Koffeinfrei</div></div><div class="item-price">0,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Espresso Shot</div></div><div class="item-price">2,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Sahne / Vanilleeis</div></div><div class="item-price">0,50 / 1,80 €</div></div>
       </div>
     </div>
   </div>
 
-  <!-- SOFTGETRÄNKE -->
-  <div id="tab-soft" class="menu-panel">
+  <!-- MATCHA & TEE -->
+  <div id="tab-matcha" class="menu-panel">
     <div class="menu-grid">
       <div class="menu-category">
-        <h3>🥤 Softgetränke</h3>
+        <h3>🍵 Matcha</h3>
+        <div class="menu-item"><div><div class="item-name">Matcha Latte</div></div><div class="item-price">4,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Iced Pure Matcha</div></div><div class="item-price">4,00 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Iced Matcha Latte</div></div><div class="item-price">5,20 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Iced Strawberry Latte</div></div><div class="item-price">5,30 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Iced Mango Matcha</div></div><div class="item-price">5,30 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Iced Berry Matcha</div></div><div class="item-price">5,30 €</div></div>
+      </div>
+      <div class="menu-category">
+        <h3>🫖 Tee</h3>
+        <div class="menu-item"><div><div class="item-name">Frische Minze</div><div class="item-desc">+ Ingwer, Zitrone oder Honig je 0,20 €</div></div><div class="item-price">3,60 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Earl Grey</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Pomelo</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Grüner Tee</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Rooibos</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Früchtetee</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Chai Latte Tiger Spice</div></div><div class="item-price">4,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Chai Latte Elephant Vanilla</div></div><div class="item-price">4,90 €</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRINKS -->
+  <div id="tab-drinks" class="menu-panel">
+    <div class="menu-grid single">
+      <div class="menu-category">
+        <h3>🥤 Softgetränke & Schorlen</h3>
         <div class="menu-item"><div><div class="item-name">Wasser leise / laut</div></div><div class="item-price">3,30 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Fritz Kola</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Fritz Kola Zero</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Fritz Orange</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Fritz Zitrone</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Fritz Kola / Zero</div></div><div class="item-price">3,50 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Fritz Orange / Zitrone</div></div><div class="item-price">3,50 €</div></div>
         <div class="menu-item"><div><div class="item-name">Bitter Lemon</div></div><div class="item-price">3,30 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Gingerale</div></div><div class="item-price">3,30 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Ginger Alé</div></div><div class="item-price">3,30 €</div></div>
         <div class="menu-item"><div><div class="item-name">Tonic Water</div></div><div class="item-price">3,30 €</div></div>
         <div class="menu-item"><div><div class="item-name">Wild Berry</div></div><div class="item-price">3,30 €</div></div>
         <div class="menu-item"><div><div class="item-name">Orangensaft</div></div><div class="item-price">3,50 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Rhabarberschorle</div></div><div class="item-price">3,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Maracujaschorle</div></div><div class="item-price">3,90 €</div></div>
-        <div class="menu-item"><div><div class="item-name">Apfelschorle</div></div><div class="item-price">3,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Heiße Schokolade</div><div class="item-desc">dunkel oder weiß</div></div><div class="item-price">4,30 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Schorlen (Rhabarber / Maracuja / Apfel)</div></div><div class="item-price">3,90 €</div></div>
       </div>
+    </div>
+  </div>
+
+  <!-- WEINE & APERITIF -->
+  <div id="tab-aperitif" class="menu-panel">
+    <div class="menu-grid">
       <div class="menu-category">
-        <h3>🍺 Flaschenbier</h3>
+        <h3>🍷 Weine</h3>
+        <div class="menu-item"><div><div class="item-name">Weißweinschorle</div></div><div class="item-price">4,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Weiß</div></div><div class="item-price">5,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Rot</div></div><div class="item-price">5,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Rosé</div></div><div class="item-price">5,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Flaschen</div><div class="item-desc">auf Anfrage</div></div><div class="item-price">–</div></div>
+        <h3 style="margin-top:1.5rem;">🍺 Bier</h3>
         <div class="menu-item"><div><div class="item-name">Heineken Pils</div></div><div class="item-price">3,80 €</div></div>
         <div class="menu-item"><div><div class="item-name">Heineken Pils alkoholfrei</div></div><div class="item-price">3,80 €</div></div>
+      </div>
+      <div class="menu-category">
+        <h3>🥂 Aperitif</h3>
+        <div class="menu-item"><div><div class="item-name">Prosecco</div></div><div class="item-price">3,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Aperol Spritz</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Hugo</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Lillet Berry</div></div><div class="item-price">6,90 €</div></div>
+        <div class="menu-item"><div><div class="item-name">Espresso Martini</div></div><div class="item-price">9,50 €</div></div>
       </div>
     </div>
   </div>
 
 </section>
 
-<!-- GALLERY -->
 <section id="galerie">
   <div class="section-label">Galerie</div>
   <h2 class="section-title" style="color:var(--cream)">Atmosphäre & <em style="color:var(--latte)">Details</em></h2>
@@ -479,7 +451,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <div id="ueber-uns">
   <div class="about-img"></div>
   <div class="about-text">
@@ -492,7 +463,6 @@
   </div>
 </div>
 
-<!-- CONTACT -->
 <section id="kontakt">
   <div class="section-label">Kontakt</div>
   <h2 class="section-title">Besucht <em>uns</em></h2>
@@ -523,23 +493,17 @@
     </div>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d729.0!2d7.135869!3d51.2557978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8d78615a9d7eb%3A0x893ddbd3351955e!2sYumi%20Caf%C3%A9!5e0!3m2!1sde!2sde!4v1"
-      width="100%"
-      height="360"
+      width="100%" height="360"
       style="border:0; border-radius:4px;"
-      allowfullscreen=""
-      loading="lazy"
+      allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <div class="footer-beans">
-      <div class="footer-bean"></div>
-      <div class="footer-bean"></div>
-    </div>
+    <div class="footer-beans"><div class="footer-bean"></div><div class="footer-bean"></div></div>
     <div class="footer-logo-text">
       <div class="logo-name">YUMI</div>
       <div class="logo-tagline">more than coffee...</div>
@@ -554,11 +518,11 @@
 </footer>
 
 <script>
-  function showTab(id) {
+  function showTab(id, btn) {
     document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
-    event.target.classList.add('active');
+    btn.classList.add('active');
   }
 </script>
 
